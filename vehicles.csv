@@ -1,0 +1,21 @@
+VehicleID,Make,Model,Year,Price,Status,Mileage,FuelType,Transmission
+1,Toyota,Corolla,2020,20000.0,Available,15000,Petrol,Automatic
+2,Honda,Civic,2019,18000.0,Sold,20000,Diesel,Manual
+3,Ford,Focus,2021,22000.0,Available,10000,Petrol,Automatic
+4,Chevrolet,Malibu,2018,16000.0,Sold,30000,Petrol,Manual
+5,Hyundai,Elantra,2022,25000.0,Available,5000,Hybrid,Automatic
+6,BMW,3 Series,2020,35000.0,Available,20000,Diesel,Automatic
+7,Audi,A4,2019,34000.0,Sold,22000,Petrol,Automatic
+8,Mercedes,C-Class,2021,40000.0,Available,8000,Diesel,Automatic
+9,Nissan,Altima,2020,23000.0,Sold,18000,Petrol,Manual
+10,Kia,Optima,2018,17000.0,Available,25000,Hybrid,Automatic
+11,Tesla,Model 3,2022,45000.0,Available,3000,Electric,Automatic
+12,Volkswagen,Passat,2019,19000.0,Sold,22000,Petrol,Manual
+13,Mazda,6,2021,24000.0,Available,12000,Petrol,Automatic
+14,Subaru,Impreza,2020,21000.0,Available,15000,Diesel,Manual
+15,Jeep,Cherokee,2021,32000.0,Available,10000,Petrol,Automatic
+16,Ford,Explorer,2020,30000.0,Sold,20000,Diesel,Automatic
+17,Chevrolet,Tahoe,2019,45000.0,Available,25000,Petrol,Automatic
+18,Honda,Accord,2022,28000.0,Available,5000,Hybrid,Automatic
+19,Hyundai,Santa Fe,2020,27000.0,Available,15000,Diesel,Automatic
+20,Kia,Sorento,2021,29000.0,Available,10000,Petrol,Manual
