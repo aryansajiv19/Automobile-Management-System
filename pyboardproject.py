@@ -2,11 +2,16 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import pymysql as py
 import numpy as np
+import os
 from sqlalchemy import create_engine
 from tabulate import tabulate
 
 pd.set_option('display.max_rows',50)
 pd.set_option('display.max_columns',50)
+
+# Connection string for MySQL, e.g. mysql+pymysql://user:password@localhost:3306/NEW_AUTOMOBILE_MANAGEMENT
+DB_URL = os.environ.get("MYSQL_URL", "mysql+pymysql://root@localhost:3306/NEW_AUTOMOBILE_MANAGEMENT")
+engine = None
 
 print("AUTOMOBILE MANAGEMENT SYSTEM")
 print("By Aryan Sajiv")
@@ -31,7 +36,7 @@ while x == 1:
         print()  
         if ch1 == 1: 
             print("Importing from an existing Database")
-            engine = create_engine("mysql+pymysql://root@localhost:3306/NEW_AUTOMOBILE_MANAGEMENT")
+            engine = create_engine(DB_URL)
             df = pd.read_sql_query("SELECT * FROM VEHICLES", engine)
             vehicles = df.copy()
             print("Importing...")
@@ -177,7 +182,7 @@ while x == 1:
             elif ch2 == 6:
                 print("6. Export to Database (SQL)")
                 if engine is None:
-                    engine = create_engine("mysql+pymysql://root@localhost:3306/NEW_AUTOMOBILE_MANAGEMENT")
+                    engine = create_engine(DB_URL)
                 vehicles.to_sql(name="vehicles", con=engine, if_exists="replace", index=False)
                 print("Exported to Database.")
 
@@ -216,7 +221,7 @@ while x == 1:
         print()  
         if ch1 == 1: 
             print("Importing from an existing Database")
-            engine = create_engine("mysql+pymysql://root@localhost:3306/NEW_AUTOMOBILE_MANAGEMENT")
+            engine = create_engine(DB_URL)
             df = pd.read_sql_query("SELECT * FROM CUSTOMERS", engine)
             customers = df.set_index('CustomerID')
             print("Importing...")
@@ -352,6 +357,8 @@ while x == 1:
 
             elif ch2 == 6:
                 print("6. Export to Database (SQL)")
+                if engine is None:
+                    engine = create_engine(DB_URL)
                 customers.to_sql(name="customers", con=engine, if_exists="replace", index=False)
                 print("Exported to Database.")
 
